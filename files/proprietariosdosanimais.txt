@@ -1,0 +1,3 @@
+Carlos;5555555555;Rua B;1122222222;carlos@email.com
+Patricia;9999999999;Avenida X;987654321;patricia@email.com
+Roberto;8888888888;Rua Y;876543210;roberto@email.com

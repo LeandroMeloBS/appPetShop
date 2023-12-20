@@ -1,0 +1,3 @@
+João;11111111111;Atendente;Manhã
+Maria;22222222222;Veterinário;Tarde
+Pedro;33333333333;Aparador;Manhã

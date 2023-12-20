@@ -1,0 +1,3 @@
+Bolinha;Cachorro;Vira-lata;Macho;3;5.5;true
+Whiskers;Gato;Siamês;Fêmea;2;4.0;false
+Rex;Cachorro;Golden Retriever;Macho;5;25.0;true
