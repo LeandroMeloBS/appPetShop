@@ -7,7 +7,9 @@ C:\INFNET\2023.2\PROJETO DE BLOCO\dev\apppetshop\src\main\java\br\edu\infnet\app
 C:\INFNET\2023.2\PROJETO DE BLOCO\dev\apppetshop\src\main\java\br\edu\infnet\apppetshop\model\domain\teste\AnimalTeste.java
 C:\INFNET\2023.2\PROJETO DE BLOCO\dev\apppetshop\src\main\java\br\edu\infnet\apppetshop\model\service\FuncionarioService.java
 C:\INFNET\2023.2\PROJETO DE BLOCO\dev\apppetshop\src\main\java\br\edu\infnet\apppetshop\CatalogoServicosLoader.java
+C:\INFNET\2023.2\PROJETO DE BLOCO\dev\apppetshop\src\main\java\br\edu\infnet\apppetshop\model\repositories\AgendamentoServicosRepository.java
 C:\INFNET\2023.2\PROJETO DE BLOCO\dev\apppetshop\src\main\java\br\edu\infnet\apppetshop\FuncionarioLoader.java
+C:\INFNET\2023.2\PROJETO DE BLOCO\dev\apppetshop\src\main\java\br\edu\infnet\apppetshop\model\repositories\ProprietarioDoAnimalRepository.java
 C:\INFNET\2023.2\PROJETO DE BLOCO\dev\apppetshop\src\main\java\br\edu\infnet\apppetshop\model\domain\Pessoa.java
 C:\INFNET\2023.2\PROJETO DE BLOCO\dev\apppetshop\src\main\java\br\edu\infnet\apppetshop\model\domain\ProprietarioDoAnimal.java
 C:\INFNET\2023.2\PROJETO DE BLOCO\dev\apppetshop\src\main\java\br\edu\infnet\apppetshop\model\service\PessoaService.java
@@ -17,9 +19,14 @@ C:\INFNET\2023.2\PROJETO DE BLOCO\dev\apppetshop\src\main\java\br\edu\infnet\app
 C:\INFNET\2023.2\PROJETO DE BLOCO\dev\apppetshop\src\main\java\br\edu\infnet\apppetshop\PessoaLoader.java
 C:\INFNET\2023.2\PROJETO DE BLOCO\dev\apppetshop\src\main\java\br\edu\infnet\apppetshop\ProprietarioDoAnimalLoader.java
 C:\INFNET\2023.2\PROJETO DE BLOCO\dev\apppetshop\src\main\java\br\edu\infnet\apppetshop\model\service\AgendamentoServicosService.java
+C:\INFNET\2023.2\PROJETO DE BLOCO\dev\apppetshop\src\main\java\br\edu\infnet\apppetshop\controller\PessoaController.java
+C:\INFNET\2023.2\PROJETO DE BLOCO\dev\apppetshop\src\main\java\br\edu\infnet\apppetshop\model\repositories\AnimalRepository.java
+C:\INFNET\2023.2\PROJETO DE BLOCO\dev\apppetshop\src\main\java\br\edu\infnet\apppetshop\model\repositories\FuncionarioRepository.java
 C:\INFNET\2023.2\PROJETO DE BLOCO\dev\apppetshop\src\main\java\br\edu\infnet\apppetshop\ApppetshopApplication.java
 C:\INFNET\2023.2\PROJETO DE BLOCO\dev\apppetshop\src\main\java\br\edu\infnet\apppetshop\model\service\CatalogoServicosService.java
 C:\INFNET\2023.2\PROJETO DE BLOCO\dev\apppetshop\src\main\java\br\edu\infnet\apppetshop\model\domain\teste\CatalogoServicosTeste.java
+C:\INFNET\2023.2\PROJETO DE BLOCO\dev\apppetshop\src\main\java\br\edu\infnet\apppetshop\model\repositories\PessoaRepository.java
 C:\INFNET\2023.2\PROJETO DE BLOCO\dev\apppetshop\src\main\java\br\edu\infnet\apppetshop\AnimalLoader.java
 C:\INFNET\2023.2\PROJETO DE BLOCO\dev\apppetshop\src\main\java\br\edu\infnet\apppetshop\model\domain\AgendamentoServicos.java
+C:\INFNET\2023.2\PROJETO DE BLOCO\dev\apppetshop\src\main\java\br\edu\infnet\apppetshop\model\repositories\CatalogoServicosRepository.java
 C:\INFNET\2023.2\PROJETO DE BLOCO\dev\apppetshop\src\main\java\br\edu\infnet\apppetshop\model\domain\teste\ProprietarioDoAnimalTeste.java

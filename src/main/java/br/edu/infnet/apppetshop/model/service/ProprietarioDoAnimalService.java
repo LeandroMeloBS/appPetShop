@@ -1,22 +1,27 @@
 package br.edu.infnet.apppetshop.model.service;
 
 import br.edu.infnet.apppetshop.model.domain.ProprietarioDoAnimal;
+import br.edu.infnet.apppetshop.model.repositories.ProprietarioDoAnimalRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
 @Service
 public class ProprietarioDoAnimalService {
 
-    private Map<String, ProprietarioDoAnimal> mapa = new HashMap<>();
+    @Autowired
+    private ProprietarioDoAnimalRepository proprietarioRepository;
 
     public void incluir(ProprietarioDoAnimal proprietario) {
-        mapa.put(proprietario.getCpf(), proprietario);
+        proprietarioRepository.save(proprietario);
     }
 
     public Collection<ProprietarioDoAnimal> obterLista() {
-        return mapa.values();
+        return (Collection<ProprietarioDoAnimal>) proprietarioRepository.findAll();
     }
+    
+    public void excluir (Integer id) {
+    	proprietarioRepository.deleteById(id);
+	}
 }

@@ -33,6 +33,7 @@ public class PessoaLoader implements ApplicationRunner {
     		Pessoa pessoa = new Pessoa(null, null);
             pessoa.setNome(campos[0]);
             pessoa.setCpf(campos[1]);
+           
             
          
             

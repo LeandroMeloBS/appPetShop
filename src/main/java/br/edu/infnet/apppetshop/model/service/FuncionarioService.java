@@ -1,23 +1,30 @@
 package br.edu.infnet.apppetshop.model.service;
 
-import br.edu.infnet.apppetshop.model.domain.Funcionario;
+import java.util.Collection;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import br.edu.infnet.apppetshop.model.domain.Funcionario;
+import br.edu.infnet.apppetshop.model.repositories.FuncionarioRepository;
 
 @Service
 public class FuncionarioService {
 
-    private Map<String, Funcionario> mapa = new HashMap<>();
-
+    @Autowired
+	private FuncionarioRepository funcionarioRepository;
+	
+	
     public void incluir(Funcionario funcionario) {
-        mapa.put(funcionario.getCpf(), funcionario);
+    	funcionarioRepository.save(funcionario);
     }
 
     public Collection<Funcionario> obterLista() {
-        return mapa.values();
+        return (Collection<Funcionario>) funcionarioRepository.findAll();
     }
+    
+    public void excluir (Integer id) {
+		funcionarioRepository.deleteById(id);
+	}
 }
 

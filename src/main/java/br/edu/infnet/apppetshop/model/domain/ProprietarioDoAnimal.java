@@ -1,9 +1,24 @@
 package br.edu.infnet.apppetshop.model.domain;
 
+import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
+@Entity
 public class ProprietarioDoAnimal extends Pessoa {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
     private String endereco;
     private String telefone;
     private String email;
+
+    @ManyToMany(mappedBy = "proprietariosAgendados")
+    private List<AgendamentoServicos> agendamentos;
 
     public ProprietarioDoAnimal(String nome, String cpf, String endereco, String telefone, String email) {
         super(nome, cpf);
@@ -36,6 +51,14 @@ public class ProprietarioDoAnimal extends Pessoa {
         this.email = email;
     }
 
+    public List<AgendamentoServicos> getAgendamentos() {
+        return agendamentos;
+    }
+
+    public void setAgendamentos(List<AgendamentoServicos> agendamentos) {
+        this.agendamentos = agendamentos;
+    }
+
     @Override
     public String toString() {
         return super.toString() + String.format("; Endereço: %s; Telefone: %s; Email: %s", endereco, telefone, email);
@@ -46,4 +69,3 @@ public class ProprietarioDoAnimal extends Pessoa {
         return super.toFileString() + ";" + endereco + ";" + telefone + ";" + email;
     }
 }
-

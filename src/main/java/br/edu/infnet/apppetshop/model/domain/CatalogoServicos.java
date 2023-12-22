@@ -1,9 +1,17 @@
 package br.edu.infnet.apppetshop.model.domain;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+@Entity
+
 public class CatalogoServicos {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
     private String nomeServico;
     private double preco;
     private int duracaoMinutos;
@@ -60,8 +68,8 @@ public class CatalogoServicos {
 
     @Override
     public String toString() {
-        return String.format("[CatalogoServicos] Nome do Serviço: %s; Preço: %.2f; Duração: %d minutos; Disponível para Agendamento: %s; Serviços Adicionais: %s",
-                nomeServico, preco, duracaoMinutos, disponivelParaAgendamento ? "Sim" : "Não", String.join(", ", servicos));
+        return String.format("[CatalogoServicos] ID: %d; Nome do Serviço: %s; Preço: %.2f; Duração: %d minutos; Disponível para Agendamento: %s; Serviços Adicionais: %s",
+                id, nomeServico, preco, duracaoMinutos, disponivelParaAgendamento ? "Sim" : "Não", String.join(", ", servicos));
     }
 
     public String toFileString() {

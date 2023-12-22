@@ -1,4 +1,10 @@
 -------------------------------------------------------------------------------
 Test set: br.edu.infnet.apppetshop.ApppetshopApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.891 s - in br.edu.infnet.apppetshop.ApppetshopApplicationTests
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.135 s <<< FAILURE! - in br.edu.infnet.apppetshop.ApppetshopApplicationTests
+contextLoads  Time elapsed: 0.007 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Could not determine type for: br.edu.infnet.apppetshop.model.domain.Animal, at table: tpessoa, for columns: [org.hibernate.mapping.Column(animal)]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Could not determine type for: br.edu.infnet.apppetshop.model.domain.Animal, at table: tpessoa, for columns: [org.hibernate.mapping.Column(animal)]
+Caused by: org.hibernate.MappingException: Could not determine type for: br.edu.infnet.apppetshop.model.domain.Animal, at table: tpessoa, for columns: [org.hibernate.mapping.Column(animal)]
+

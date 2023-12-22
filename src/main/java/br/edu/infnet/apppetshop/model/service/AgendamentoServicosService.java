@@ -1,22 +1,29 @@
 package br.edu.infnet.apppetshop.model.service;
 
-import br.edu.infnet.apppetshop.model.domain.AgendamentoServicos;
+import java.util.Collection;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import br.edu.infnet.apppetshop.model.domain.AgendamentoServicos;
+import br.edu.infnet.apppetshop.model.repositories.AgendamentoServicosRepository;
 
 @Service
 public class AgendamentoServicosService {
 
-    private Map<String, AgendamentoServicos> mapa = new HashMap<>();
+    
+	@Autowired
+	private AgendamentoServicosRepository agendamentoServicosRepository;
 
     public void incluir(AgendamentoServicos agendamentoServicos) {
-        mapa.put(agendamentoServicos.getDataAgendamento().toString(), agendamentoServicos);
+    	agendamentoServicosRepository.save(agendamentoServicos);
     }
 
     public Collection<AgendamentoServicos> obterLista() {
-        return mapa.values();
+        return (Collection<AgendamentoServicos>)agendamentoServicosRepository.findAll();
     }
+    
+    public void excluir (Integer id) {
+    	agendamentoServicosRepository.deleteById(id);
+	}
 }

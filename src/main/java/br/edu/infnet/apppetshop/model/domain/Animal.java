@@ -1,23 +1,44 @@
 package br.edu.infnet.apppetshop.model.domain;
 
-public class Animal {
-    private String nome;
-    private String especie;
-    private String raca;
-    private String sexo;
-    private int idade;
-    private double peso;
-    private boolean vacinado;
+import java.util.List;
 
-    public Animal(String nome, String especie, String raca, String sexo, int idade, double peso, boolean vacinado) {
-        this.nome = nome;
-        this.especie = especie;
-        this.raca = raca;
-        this.sexo = sexo;
-        this.idade = idade;
-        this.peso = peso;
-        this.vacinado = vacinado;
-    }
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
+@Entity
+
+public class Animal {
+  
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Integer id;
+  
+  private String nome;
+  private String especie;
+  private String raca;
+  private String sexo;
+  private int idade;
+  private double peso;
+  private boolean vacinado;
+  
+  @ManyToMany(mappedBy = "animaisAgendados")
+  private List<AgendamentoServicos> agendamentos;
+  
+  public Animal() {
+  }
+
+  public Animal(String nome, String especie, String raca, String sexo, int idade, double peso, boolean vacinado) {
+      this.nome = nome;
+      this.especie = especie;
+      this.raca = raca;
+      this.sexo = sexo;
+      this.idade = idade;
+      this.peso = peso;
+      this.vacinado = vacinado;
+  }
 
     public String getNome() {
         return nome;
@@ -74,14 +95,22 @@ public class Animal {
     public void setVacinado(boolean vacinado) {
         this.vacinado = vacinado;
     }
+    
+    public List<AgendamentoServicos> getAgendamentos() {
+        return agendamentos;
+    }
+
+    public void setAgendamentos(List<AgendamentoServicos> agendamentos) {
+        this.agendamentos = agendamentos;
+    }
 
     @Override
     public String toString() {
-        return String.format("[Animal] Nome: %s; Espécie: %s; Raça: %s; Sexo: %s; Idade: %d; Peso: %.2f; Vacinado: %s",
-                nome, especie, raca, sexo, idade, peso, vacinado ? "Sim" : "Não");
+        return String.format("[Animal] ID: %d; Nome: %s; Espécie: %s; Raça: %s; Sexo: %s; Idade: %d; Peso: %.2f; Vacinado: %s",
+                id, nome, especie, raca, sexo, idade, peso, vacinado ? "Sim" : "Não");
     }
 
     public String toFileString() {
-        return String.format("%s;%s;%s;%s;%d;%.2f;%s", nome, especie, raca, sexo, idade, peso, vacinado);
+        return String.format("%d;%s;%s;%s;%s;%d;%.2f;%s", id, nome, especie, raca, sexo, idade, peso, vacinado);
     }
 }

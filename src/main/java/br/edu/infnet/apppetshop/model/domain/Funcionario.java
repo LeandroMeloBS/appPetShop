@@ -1,10 +1,19 @@
 package br.edu.infnet.apppetshop.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+
+
+@Entity
+
 public class Funcionario extends Pessoa {
     private String funcao;
     private String turnoTrabalho;
     private Animal animal;
-
+    
+    @ManyToOne
+    private AgendamentoServicos agendamentoServicos;
+    
     public Funcionario(String nome, String cpf, String funcao, String turnoTrabalho, Animal animal) {
         super(nome, cpf);
         this.funcao = funcao;
@@ -34,6 +43,14 @@ public class Funcionario extends Pessoa {
 
     public void setAnimal(Animal animal) {
         this.animal = animal;
+    }
+    
+    public AgendamentoServicos getAgendamentoServicos() {
+        return agendamentoServicos;
+    }
+
+    public void setAgendamentoServicos(AgendamentoServicos agendamentoServicos) {
+        this.agendamentoServicos = agendamentoServicos;
     }
 
     @Override

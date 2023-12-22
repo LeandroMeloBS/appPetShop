@@ -1,22 +1,30 @@
 package br.edu.infnet.apppetshop.model.service;
 
-import br.edu.infnet.apppetshop.model.domain.CatalogoServicos;
+import java.util.Collection;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import br.edu.infnet.apppetshop.model.domain.CatalogoServicos;
+import br.edu.infnet.apppetshop.model.repositories.CatalogoServicosRepository;
 
 @Service
 public class CatalogoServicosService {
 
-    private Map<String, CatalogoServicos> mapa = new HashMap<>();
+    
+	@Autowired
+	private CatalogoServicosRepository catalogoServicosRepository;
+	
 
     public void incluir(CatalogoServicos catalogoServicos) {
-        mapa.put(catalogoServicos.getNomeServico(), catalogoServicos);
+    	catalogoServicosRepository.save(catalogoServicos);
     }
 
     public Collection<CatalogoServicos> obterLista() {
-        return mapa.values();
+        return (Collection<CatalogoServicos>)catalogoServicosRepository.findAll();
     }
+    
+    public void excluir (Integer id) {
+    	catalogoServicosRepository.deleteById(id);
+	}
 }
